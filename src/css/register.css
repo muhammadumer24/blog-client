@@ -1,0 +1,59 @@
+label {
+  position: relative;
+  font-size: 0.86rem;
+}
+label > span {
+  position: absolute;
+  top: 23.5%;
+  left: 4%;
+  color: rgba(0, 0, 0, 0.5);
+}
+input,
+button,
+label {
+  padding: 1em;
+  width: 100%;
+  border-radius: 7.5px;
+  border: 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 1.5em;
+  border-radius: 10px;
+  margin: auto;
+  background-color: #feffe917;
+  box-shadow: 2px 3px 10px black;
+  margin-block-start: 3em;
+  padding-block-end: 2em;
+  align-items: center;
+}
+button {
+  width: 25%;
+  cursor: pointer;
+  background-color: seagreen;
+  color: white;
+  font-weight: 600;
+}
+button:hover {
+  background-color: rgba(46, 139, 86, 0.855);
+}
+input {
+  padding-block-start: 1.5em;
+  width: 93.5%;
+  font-size: 1rem;
+  padding-block-end: 0.6em;
+  border: 2px solid lightsteelblue;
+  outline: 0;
+}
+label svg,
+img {
+  font-size: 3rem;
+  display: block;
+  margin-inline: auto;
+  color: lightseagreen;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 15%;
+}
