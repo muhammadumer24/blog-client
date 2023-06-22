@@ -1,14 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Common from "./components/common"
-import Blog from "./pages/showBlog"
-import NotFound from "./pages/notFound"
-import Add from "./pages/add"
-import Login from "./pages/login"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import Protected from "./utilities/protected"
-import SingleBlog from "./pages/singleBlog"
-export default () => {
+import {
+  Common,
+  Home,
+  NotFound,
+  Add,
+  Login,
+  Protected,
+  SingleBlog,
+} from "./utilities/imports"
+
+const App = () => {
   const [userName, setUserName] = useState("")
   useEffect(() => {
     const check = async () => {
@@ -25,12 +28,13 @@ export default () => {
       }
     }
     check()
-  })
+  }, [])
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Common userName={userName} />}>
-          <Route index element={<h1>Home</h1>} />
+          <Route index element={<Home />} />
+          <Route path=":id" element={<SingleBlog />} />
           <Route path="about" element={<h1>About</h1>} />
           <Route path="contact-us" element={<h1>Contact Me</h1>} />
           <Route path="login" element={<Login userName={userName} />} />
@@ -42,11 +46,10 @@ export default () => {
               </Protected>
             }
           />
-          <Route path="blogs" element={<Blog userName={userName} />} />
-          <Route path="blogs/:title" element={<SingleBlog />} />
           <Route path="*" element={<NotFound userName={userName} />} />
         </Route>
       </Routes>
     </BrowserRouter>
   )
 }
+export default App

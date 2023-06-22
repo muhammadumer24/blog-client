@@ -1,6 +1,7 @@
 header {
   padding: 1em;
-  background-color: white;
+  background-color: rgb(110, 178, 255);
+  color: white;
 }
 nav > ul {
   display: grid;
@@ -13,10 +14,36 @@ nav > ul {
 header li {
   padding-inline: 0.5em;
   text-align: center;
+  position: relative;
 }
-svg {
+header a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 139, 139, 0.561);
+  transform-origin: right;
+  transition: transform ease-in-out 0.3s;
+  transform: scaleX(0);
+}
+header a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+#logo *:hover::after {
+  transform: scaleX(0);
+}
+svg ~ ul {
+  color: black;
+}
+header svg {
   font-size: 1.3rem;
-  color: rgba(0, 0, 0, 0.9);
+  transition: transform ease-in-out 0.1s;
+}
+header svg:hover {
+  transform: scale(1.2);
 }
 .clickOn {
   position: relative;

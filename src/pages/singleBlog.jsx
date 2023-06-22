@@ -2,20 +2,17 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { BiLoaderCircle } from "react-icons/bi"
 import axios from "axios"
-export default () => {
+const Blog = () => {
   const [blogData, setBlogData] = useState(false)
   const [loading, setLoading] = useState(false)
   const params = useParams()
   useEffect(() => {
-    if (!params) {
-      return console.log("nothing")
-    }
-    fetchData(params.title)
-  }, [])
-  const fetchData = async (title) => {
+    fetchData(params.id)
+  }, [params])
+  const fetchData = async (id) => {
     try {
       setLoading(true)
-      const { data } = await axios.get(`http://localhost:2457/blog/${title}`)
+      const { data } = await axios.get(`http://localhost:2457/blog/${id}`)
       setBlogData(data)
       setLoading(false)
     } catch (err) {
@@ -34,9 +31,11 @@ export default () => {
       {blogData && (
         <div className="showBlog">
           <h2 className="title">{blogData.title}</h2>
+          <img src={blogData.coverPhoto} alt="blogCoverPhoto" />
           <div dangerouslySetInnerHTML={{ __html: blogData.content }}></div>
         </div>
       )}
     </>
   )
 }
+export default Blog

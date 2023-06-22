@@ -1,7 +1,7 @@
 .loading {
   position: fixed;
   z-index: 2;
-  top: 10vh;
+  top: 69px;
   animation: 2.5s infinite rotate linear;
   font-size: 2rem;
   color: seagreen;

@@ -39,3 +39,29 @@
 .showBlog .title {
   margin-block-end: 10vh;
 }
+.reload {
+  height: 74vh;
+  display: grid;
+  place-items: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3px;
+}
+.container img {
+  max-width: 100%;
+}
+.item {
+  grid-area: auto;
+}
+.item1 {
+  grid-area: 1/1/5/7;
+}
+.container h2 {
+  font-size: 0.5rem;
+}
+.item1 h2 {
+  font-size: 1.5rem;
+}

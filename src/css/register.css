@@ -47,7 +47,7 @@ input {
   border: 2px solid lightsteelblue;
   outline: 0;
 }
-label svg,
+/* label svg,
 img {
   font-size: 3rem;
   display: block;
@@ -56,4 +56,4 @@ img {
   cursor: pointer;
   border-radius: 50%;
   width: 15%;
-}
+} */

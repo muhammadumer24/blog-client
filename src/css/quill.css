@@ -33,15 +33,25 @@ pre {
   color: white;
   padding: 0.3em;
 }
-button {
+.button {
   padding: 0.5em;
   font-size: 1.2rem;
   border-radius: 10px;
   cursor: pointer;
   border: 2px solid seagreen;
   outline: 0;
-  color: seagreen;
+  color: white;
+  background: seagreen;
+  width: 25%;
+  margin: auto;
 }
-button:hover {
+.button:hover {
   font-weight: bolder;
+}
+.coverPhoto > img {
+  border-radius: unset;
+  width: 90%;
+}
+.setImage {
+  text-align: center;
 }
